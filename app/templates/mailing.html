@@ -1,0 +1,73 @@
+{% extends 'dashboard_base.html' %}
+{% load static %}
+{% block title %}
+Send Mail
+{% endblock title %}
+{% block message %}
+<section class="py-5">
+    <div class="container">
+      <div >Home / Mailing</div>
+    </div>
+  </section>
+<section class="py-3">
+  <div class="container">
+      <div class="row">
+        <div class="col-sm-5">
+          <div style="color: #E05300;font-weight: bold;">MAILING</div>
+          {% for message in messages %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>{{message}}</strong> 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
+                    {% endfor %}
+                 <form action="" method="post" class="mt-4">
+                    {% csrf_token %}
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="">Recipient <span class="text-danger">*</span></label>
+                            <input type="email" name="recipient" class="form-control" id="">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Subject <span class="text-danger">*</span></label>
+                        <input type="text" name="subject" class="form-control" id=""> 
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col">
+                         <label for="">Image URL</label>
+                         <input type="imageurl" name="imageurl" class="form-control" id="">
+                      </div>
+                      <div class="col">
+                          <label for="">Select template <span class="text-danger">*</span></label>
+                          <select class="form-control" name="template" required>
+                            <option value=""></option>
+                            <option value="a">a</option>
+                            <option value="b">b</option>
+                            <option value="c">c</option>
+                            <option value="d">d</option>
+                            <option value="e">e</option>
+                          </select>
+                      </div>
+                  </div>
+                    <div class="mb-3">
+                        <label for="">File</label>
+                        <input type="file" name="mailfile" class="form-control" id=""> 
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Message  <span class="text-danger">*</span></label>
+                        <textarea name="message" required id=""  class="form-control" >
+        
+                        </textarea>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-sm w-100 text-light" style="background-color: #E05300;">SEND MESSAGE</button>
+                    </div>
+                 </form>
+        </div>
+        <div class="col-sm-5">
+
+        </div>
+      </div>
+  </div>
+</section>
+{% endblock message%}

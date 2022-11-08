@@ -1,0 +1,127 @@
+{% extends 'dashboard_base.html' %}
+{% load static %}
+{% block title %}
+My Account
+{% endblock title %}
+{% block message %}
+<section class="py-5">
+  <div class="container">
+    <div>Last Login Session: {{user.last_login}}</div>
+    <div class="card py-5 rounded-bottom rounded-top" style="background-color: #E05300; border:none">
+      <div class="card-body">
+          
+           <div class="text-light text-center" style="font-weight: bold;"><span id="day"></span> {{user.username}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  var day = document.getElementById("day")
+  var date = new Date()
+  var hour = date.getHours()
+  if(hour >= 12 && hour < 16){
+    day.innerHTML = "Good Afternoon"
+  }
+  else if(hour >= 16 && hour < 24){
+    day.innerHTML = "Good Evening"
+  }
+  else{
+    day.innerHTML = "Good Morning"
+  }
+</script>
+<section class="py-5">
+  <div class="container">
+      <div style="font-weight: bold; color: #E05300" class="mb-3">STEP BY STEP GUIDE</div>
+      <div class="row">
+          <div class="col-sm-3 mb-3">
+                <div class="card">
+                  <img src="https://cdn.pixabay.com/photo/2018/03/22/02/37/email-3249062__480.png" class="card-img-top" alt="">
+                  <div class="card-body">
+                      <div style="font-size: small;padding-bottom: 8px;">
+                          1. Fill up the sender and recipient information.
+                      </div>
+                  </div>
+                </div>
+          </div>
+          <div class="col-sm-3 mb-3">
+              <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRREshqN5MgeMVV-g0PD1HEHRUaUFsNqVO9yg&usqp=CAU" class="card-img-top" alt="">
+                <div class="card-body">
+                  <div style="font-size: small;;">
+                    2. Fill up the subject section.
+               </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-3 mb-3">
+          <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKI3Xwpj3eWR5776Lmm4D3OOiMy11A5R4HQA&usqp=CAU" class="card-img-top" alt="">
+            <div class="card-body">
+              <div style="font-size: small;padding-bottom: 21px;">
+               3. Input your image url and select your template.
+           </div>
+            </div>
+          </div>
+    </div>
+    <div class="col-sm-3 mb-3">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx3yqYae8dNNzLomOV9yKYOW-DjLlt_sconw&usqp=CAU" class="card-img-top" alt="">
+        <div class="card-body">
+          <div style="font-size: small;padding-bottom: 13px;">
+            4. Select your file e.g pdf, docx, etc and select your template.
+       </div>
+        </div>
+      </div>
+</div>
+<div class="col-sm-3">
+  <div class="card">
+    <img src="https://media.istockphoto.com/photos/womans-hands-inserting-letter-in-mailbox-picture-id609696228?k=20&m=609696228&s=612x612&w=0&h=zr8bjgEqJQxo1h8lBda99s1bBbS9XOkcrtLPI0Kx-so=" class="card-img-top" alt="">
+    <div class="card-body">
+      <div style="font-size: small;">
+        5. write out your write and send the message.
+   </div>
+    </div>
+  </div>
+</div>
+      </div>
+  </div>
+</section>
+<section class="py-5 bg-secondary">
+  <div class="container">
+      <div class="row">
+        <div class="col-sm-5">
+          <div style="color: #E05300;font-weight: bold;">INSTANT MAILING</div>
+          {% for message in messages %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>{{message}}</strong> 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
+                    {% endfor %}
+          <form action="" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="">Recipient <span class="text-danger">*</span></label>
+              <input type="email" required name="recipient" class="form-control" id="">
+          </div>
+            <div class="mb-3">
+                <label for="">Subject  <span class="text-danger">*</span></label>
+                <input type="text" required name="subject" class="form-control" id="">
+            </div>
+            <div class="mb-3">
+                <label for="">Message  <span class="text-danger">*</span></label>
+                <textarea name="message" required id=""  class="form-control" >
+
+                </textarea>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-sm w-100 text-light" style="background-color: #E05300;">SEND MESSAGE</button>
+            </div>
+        </form>
+        </div>
+        <div class="col-sm-5">
+
+        </div>
+      </div>
+  </div>
+</section>
+{% endblock message%}

@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Giit Mailing 
+{% endblock title %}
+{% block message %}
+
+<section class="py-5">
+    <div class="container">
+          <div class="row">
+            <div class="col-sm-5">
+                <img src="{% static 'a.avif'%}" class="img-fluid" alt="">
+            </div>
+            <div class="col-sm-5">
+                <div style="color: #E05300;">About us</div>
+                <div class="h5">Learn More About Us</div>
+                <div style="font-size: small">
+                    GIIT is a global leader delivering a wide range of management and technical training. We are a trusted training delivery partner of 350+ corporate clients and universities across the globe with 50,000+ professionals trained across various courses. GIIT helps individuals and organizations by providing courses based on practical knowledge and theoretical concepts. Our industry reputation speaks for itself.
+                </div>
+                <div style="font-size: small" class="mt-2">
+                    We offer the best value in training services combined with the support of our creative minds to establish a solution that suits your learning needs. We help in building careers and shaping up the future leaders. 
+                   </div>
+                <button style="background-color: #E05300;"  class="btn btn-sm mt-2 text-light" onclick="myfunc()">Visit Website</button>
+            </div>
+          </div> 
+    </div>
+</section>
+<script>
+    function myfunc(){
+        window.location = "https://giit.com.ng/index.php"
+    }
+</script>
+<section class="py-5">
+    <div class="container">
+        <div style="font-weight: bold;color: #E05300;">Services</div>
+         <div class="h5">WHAT WE DO</div>
+         <div class="row">
+            <div class="col-sm-4">
+                  <div class="row">
+                    <div class="col">
+                         <div class="card mb-3">
+                            <div class="card-body">
+                                <img src="https://giit.com.ng/uploads/service_banner_6fdfc221a598.png" style="width: 4rem; height: 4rem;" alt="">
+                                 <hr>
+                                 <div style="font-weight: bold;font-size: small;">Web project</div>
+                            </div>
+                         </div>
+                         <div class="card mb-3">
+                            <div class="card-body">
+                                <img src="https://giit.com.ng/uploads/service_banner_6cbcd6b66755.png" style="width: 4rem;height: 4rem;" alt="">
+                                <hr>
+                                <div style="font-weight: bold;font-size: small;">Mobile App</div>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="col">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <img src="https://giit.com.ng/uploads/service_banner_3ef9bd51d3c5.png" style="width: 4rem;height: 4rem;" alt="">
+                                <hr>
+                                <div style="font-weight: bold;font-size: small;">Software</div>
+                            </div>
+                         </div>
+                         <div class="card mb-3">
+                            <div class="card-body">
+                                <img src="https://giit.com.ng/uploads/service_banner_a7d7c3860f1f.png" style="width: 4rem;height: 4rem;" alt="">
+                                <hr>
+                                <div style="font-weight: bold;font-size: small;">Hosting & Domain</div>
+                            </div>
+                         </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <img src="https://giit.com.ng/uploads/service_banner_f83414389b5f.png" style="width: 4rem;height: 4rem;" alt="">
+                                <hr>
+                                <div style="font-weight: bold;font-size: small;">Social Media</div>
+                            </div>
+                         </div>
+                         <div class="card mb-3">
+                            <div class="card-body">
+                                <img src="https://giit.com.ng/uploads/service_banner_5ece532b576a.png" style="width: 4rem;height: 4rem;" alt="">
+                                <hr>
+                                <div style="font-weight: bold; font-size: small;">IT Support</div>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="col">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <img src="https://giit.com.ng/uploads/service_banner_195f9182f495.png" style="width: 4rem;height: 4rem;" alt="">
+                                <hr>
+                                <div style="font-weight: bold;font-size: small;">CCTV Installation</div>
+                            </div>
+                         </div>
+                         <div class="card mb-3">
+                            <div class="card-body">
+                                <img src="https://giit.com.ng/uploads/service_banner_8e29b9147e63.png" style="width: 4rem;height: 4rem;" alt="">
+                                <hr>
+                                <div style="font-weight: bold;font-size: small;">Online Marketting</div>
+                            </div>
+                         </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                               <img src="https://giit.com.ng/uploads/service_banner_1b928cee9316.png" style="width: 4rem;height: 4rem;" alt="">
+                                <hr>
+                                <div style="font-weight: bold;font-size: small;">Google Ads</div>
+                            </div>
+                         </div>
+                         <div class="card mb-3">
+                            <div class="card-body">
+                                <img src="https://giit.com.ng/uploads/service_banner_cb8ba7617fcf.png" style="width: 4rem;height: 4rem;" alt="">
+                                <hr>
+                                <div style="font-weight: bold;font-size: small;">Car tracking</div>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="col">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <img src="https://giit.com.ng/uploads/service_banner_62a8e70eee7b.png" style="width: 4rem;height: 4rem;" alt="">
+                                <hr>
+                                <div style="font-weight: bold;font-size: small;">System Supply</div>
+                            </div>
+                         </div>
+                         <div class="card mb-3">
+                            <div class="card-body">
+                                <img src="https://giit.com.ng/uploads/service_banner_1db2e87cbff4.png" style="width: 4rem;height: 4rem;" alt="">
+                                <hr>
+                                <div style="font-weight: bold;font-size: small;">Solar and Inverter</div>
+                            </div>
+                         </div>
+                    </div>
+                  </div>
+            </div>
+         </div>
+    </div>
+</section>
+{% endblock message%}
